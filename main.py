@@ -4,6 +4,7 @@ from collision import dist, CheckPointCircle
 # Initialize pygame
 pygame.init()
 screen = pygame.display.set_mode([500, 500])
+clock=pygame.time.Clock()
 
 # Variables
 x: float=250
@@ -20,6 +21,7 @@ friction: float=1.005
 running = True
 
 while running:
+  clock.tick(90)
   for event in pygame.event.get():
     if event.type == pygame.QUIT:
       running = False
