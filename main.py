@@ -1,5 +1,6 @@
 import pygame
 from collision import dist, CheckPointCircle
+from Fruit import Fruit
 
 # Initialize pygame
 pygame.init()
@@ -7,15 +8,11 @@ screen = pygame.display.set_mode([500, 500])
 clock=pygame.time.Clock()
 
 # Variables
-x: float=250
-y: float=250
-vx: float=0
-vy: float=-1
+
 mx: int=0
 my: int=0
 
-gravity: float=0.002
-friction: float=1.005
+melon=Fruit(100,1,-3.75)
 
 # Game
 running = True
@@ -30,24 +27,13 @@ while running:
   mx, my=pygame.mouse.get_pos()
 
   # Update the game
-  if pressed_keys[pygame.K_SPACE]:
-    vy=-1
-
-
-  vy+=gravity
-
-  vx/=friction
-  vy/=friction
-
-  x+=vx
-  y+=vy
+  melon.update()
 
   # Clear the screen
   screen.fill((255, 255, 255))
 
   # Draw the stuff
-  pygame.draw.circle(screen, (0, 0, 255), (x, y), 20)
-
+  melon.draw(screen)
 
   # Flip the display
 
