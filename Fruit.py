@@ -18,4 +18,4 @@ class Fruit():
     self.x+=self.vx
     self.y+=self.vy
   def draw(self,screen: pygame.Surface):
-    pygame.draw.circle(screen, (0, 255, 50), (self.x,self.y), self.size)
+    pygame.draw.circle(screen, (0, 175, 60), (self.x,self.y), self.size)
